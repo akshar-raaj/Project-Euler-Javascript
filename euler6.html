@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function sum_of_square(n)
+        {
+            s= (n*(n+1)*(2*n+1))/6;
+            return s;
+        }
+        
+        function square_of_sum(n)
+        {
+            sum_n=(n*(n+1))/2;
+            return (Math.pow(sum_n,2));
+        }
+        
+        function difference()
+        {
+            alert("Required difference is "+(square_of_sum(100)-sum_of_square(100)));
+        }
+        </script>
+    </head>
+    <body onload="difference();">
+    </body>
+</html>
