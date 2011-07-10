@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function sum_primes()
+        {
+            var limit=2000000;
+            var sum=0;
+            var i;
+            for(i=2;i<limit;i++)
+            {
+                if(isPrime(i))
+                {
+                    sum+=i;
+                }
+            }
+            alert("Sum of primes below 2 million is "+sum);
+        }
+        
+        function isPrime(num)
+        {
+            sqrt=Math.pow(num,0.5);
+            sqrt=Math.floor(sqrt);
+            iP=2;
+            while(iP<=sqrt)
+            {
+                if(num%iP==0)
+                {
+                    return false;
+                }
+                iP++;
+            }
+            return true;
+        }
+        </script>
+    </head>
+    <body onload="sum_primes();">
+    </body>
+</html>
