@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function isPalindrome(text)
+            {
+                text=String(text);
+                half_length=text.length/2;
+                half_length=Math.floor(half_length);
+                for(i=0;i<half_length;i++)
+                {
+                    if(text.charAt(i)==text.charAt(text.length-i-1))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    
+                }
+                return true;
+            }           
+            
+            function findLargestPalindrome()
+            {
+                var highest=0;
+                var product;
+                var lower_limit=100;
+                var higher_limit=1000;
+                for(var i=lower_limit;i<higher_limit;i++)
+                {
+                    for(var j=lower_limit;j<higher_limit;j++)
+                    {
+                        product=i*j;
+                        if(isPalindrome(product) && product>highest)
+                        {
+                            highest=product;
+                        }
+                    }
+                }
+                alert("Largest palindrome made from the product of two 3 digit numbers is "+highest);
+            }
+        </script>
+    </head>
+    <body onload="findLargestPalindrome();">
+    </body>
+</html>
