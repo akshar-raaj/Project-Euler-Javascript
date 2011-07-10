@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function sum_multiple_3_or_5()
+            {
+                var limit=1000;
+                sum=0;
+                for(var i=3;i<limit;i++)
+                {
+                    if(i%3==0 || i%5==0)
+                    {
+                        sum+=i;
+                    }
+                }
+                document.writeln("Sum is "+sum);
+            }
+        </script>
+    </head>
+    <body onload="sum_multiple_3_or_5();">
+    </body>
+</html>
