@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        
+        /*function find_hcf(num1,num2)
+        {
+            var remainder=1;
+            var larger;
+            var smaller;
+            if(num1>=num2)
+            {
+                larger=num1;
+                smaller=num2;
+            }
+            else{
+                larger=num2;
+                smaller=num1;
+            }
+            while(remainder!=0)
+            {
+                remainder=larger%smaller;
+                larger=smaller;
+                smaller=remainder;
+            }
+            alert("hcf is "+larger);
+        }*/
+        function find_lcm()
+        {
+            var step=20;
+            var i;
+            for(i=20;;i=i+20)
+            {
+                if(i%11==0 && i%12==0 && i%13==0 && i%14==0 && i%15==0 && i%16==0 && i%17==0 && i%18==0 && i%19==0 && i%20==0)
+                {
+                    break;
+                }
+            }
+            alert("Lcm of numbers from 1 to 20 is "+i);
+        }
+        </script>
+    </head>
+    <body onload="find_lcm();">
+    </body>
+</html>
