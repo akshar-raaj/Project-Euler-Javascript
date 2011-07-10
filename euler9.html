@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function is_pythagorean_triplet(a,b,c)
+        {
+            if((a*a)+(b*b)==(c*c))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function find_pythagorean_triplet()
+        {
+            var i;
+            var j;
+            var k;
+            var product;
+            for(i=1;i<1000;i++)
+            {
+                for(j=i+1;j<1000;j++)
+                {
+                    k=1000-i-j;
+                    if(is_pythagorean_triplet(i,j,k))
+                    {
+                        product=i*j*k;
+                        break;
+                    }
+                }
+            }
+            alert("Product abc is "+product);
+        }
+        </script>
+    </head>
+    <body onload="find_pythagorean_triplet();">
+    </body>
+</html>
