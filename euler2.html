@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function sum_fibonacci()
+            {
+                firstTerm=1;
+                secondTerm=2;
+                nextTerm=0;
+                sum=2;
+                do
+                {
+                    nextTerm=firstTerm+secondTerm;
+                    if(nextTerm%2==0)
+                    {
+                        sum+=nextTerm;
+                    }
+                    firstTerm=secondTerm;
+                    secondTerm=nextTerm;
+                }
+                while(nextTerm<4000000);
+                document.writeln(sum);
+            }
+        </script>
+    </head>
+    <body onload=sum_fibonacci();>
+    </body>
+</html>
