@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            /*function findLargestPrimeFactor()
+            {
+                number=600851475143;
+                //sqrt=Math.pow(number,0.5)
+                //document.writeln(sqrt);
+                /*i=2;
+                highest=1;
+                while(i<=number/2)
+                {
+                    document.writeln("Inside while");
+                    if(number%i==0)
+                    {
+                        if(isPrime(i))
+                        {
+                            highest=i;
+                        }
+                    }
+                    i++;
+                }
+                document.writeln(highest);
+                half=number/2;
+                half=Math.ceil(half);
+                highest=1;
+                //alert(half);
+                //document.writeln(half+1);
+                iL=2;
+                while(iL<=half)
+                {
+                    //document.write(i);
+                    if(number%iL==0)
+                    {
+                        if(checkIsPrime(iL))
+                        {
+                            //document.writeln(iL);
+                            highest=iL;
+                        }
+                        //alert(iL+" divides "+number);
+                    }
+                    else
+                    {
+                        //alert(iL+" does not divide 10");
+                    }
+                    iL=iL+1;
+                }
+                alert("Highest prime factor is "+highest);
+            }*/
+            
+            function isPrime(num)
+            {
+                sqrt=Math.pow(num,0.5);
+                sqrt=Math.ceil(sqrt);
+                iP=2;
+                while(iP<sqrt)
+                {
+                    if(num%iP==0)
+                    {
+                        return false;
+                    }
+                    iP++;
+                }
+                return true;
+            }
+            
+            /*function checkIsPrime(number)
+            {
+                    if(isPrime(number))
+                    {
+                        //document.writeln(number+" is prime");
+                        return true;
+                    }
+                    else
+                    {
+                        //document.writeln(number+" not prime");
+                        return false;
+                    }
+            }*/
+            
+            number=600851475143;
+            lower_limit=2;
+            
+            function sort_function(a,b)
+            {
+                if(a<b)
+                {
+                    return -1;
+                }
+                else if(a==b)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            
+            function factorize()
+            {
+                var list_factors=[];
+                var higher_limit;
+                var next_factor;
+                while(number!=1)
+                {
+                    higher_limit=number;
+                    next_factor=find_factor(lower_limit,higher_limit);
+                    list_factors[list_factors.length]=next_factor;
+                    number=number/next_factor;
+                }
+                alert("Largest prime factor of the number 600851475143 is "+list_factors[list_factors.length-1]);
+            }
+            
+            function find_factor(lower_limit,higher_limi)
+            {
+                var required_factor;
+                while(lower_limit<=higher_limi)
+                {
+                    if(number%lower_limit==0 && isPrime(lower_limit))
+                    {
+                        required_factor=lower_limit;
+                        return required_factor;
+                    }
+                    else
+                    {
+                        lower_limit++;
+                    }
+                }
+                required_factor=higher_limi;
+                return higher_limi;
+            }
+        </script>
+    </head>
+    <body onload="factorize();"> 
+</html>
