@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function generate_sequence(n)
+        {
+            var chain_length=1;
+            while(n!=1)
+            {
+                if(n%2==0)
+                {
+                    n=n/2;
+                }
+                else{
+                    n=3*n+1;
+                }
+                chain_length++;
+            }
+            return chain_length;    
+        }
+        
+        function collatz()
+        {
+            var number;
+            var chain_length=0;
+            var temp_chain_length;
+            for(var i=1;i<=1000000;i++)
+            {
+                temp_chain_length=generate_sequence(i);
+                if(temp_chain_length>chain_length)
+                {
+                    number=i;
+                    chain_length=temp_chain_length;
+                }
+            }
+            alert("Required number is "+number);
+        }
+        
+        </script>
+    </head>
+    <body onload="collatz();">
+    </body>
+</html>
