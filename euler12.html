@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function generate_triangle_number(n)
+        {
+            return (n*(n+1))/2;
+        }
+        
+        function required_triangle_num()
+        {
+            var i;
+            var next_triangle_num;
+            var sqrt;
+            for(i=2;;i++)
+            {
+                var factors_list=[];
+                factors_list[0]=1;
+                next_triangle_num=generate_triangle_number(i);
+                sqrt=Math.pow(next_triangle_num,0.5);
+                sqrt=Math.floor(sqrt);
+                var j;
+                for(j=2;j<=sqrt;j++)
+                {
+                    if(next_triangle_num%j==0)
+                    {
+                        var quotient=next_triangle_num/j;
+                        factors_list[factors_list.length]=j;
+                        factors_list[factors_list.length]=quotient;
+                    }
+                }
+                factors_list[factors_list.length]=next_triangle_num;
+                if(factors_list.length>500)
+                {
+                    break;
+                }
+            }
+            alert("First triangle number to have over 500 divisors is "+next_triangle_num);
+        }
+        
+        function isPrime(num)
+        {
+            var sqrt=Math.pow(num,0.5);
+            sqrt=Math.floor(sqrt);
+            iP=2;
+            while(iP<=sqrt)
+            {
+                if(num%iP==0)
+                {
+                    return false;
+                }
+                iP++;
+            }
+            return true;
+        }
+        </script>
+    </head>
+    <body onload="required_triangle_num();">
+    </body>
+</html>
